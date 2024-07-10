@@ -60,18 +60,50 @@ i{
     text-align: center;
 }
 
+@keyframes zoomIn {
+    0% {
+        transform: scale(1); /* Start at normal size */
+    }
+    100% {
+        transform: scale(1.2); /* Zoom in to 120% of original size */
+    }
+}
+
 .profileImg{
     width: 30%;
     filter: grayscale(100%);
     margin-left: 27vw;
+    animation: zoomIn 1s ease-in-out 1 alternate;
 }
 
-.name{
+@keyframes rightM {
+    0% {
+        right: -100%; 
+        opacity: 0;
+    }
+    100% {
+        right: 20%; 
+        opacity: 1; 
+    }
+}
+
+.name {
     position: absolute;
-    top: 22%;
-    left: 20%;
+    top: 22%; 
+    right: -100%; 
     font-size: 10rem;
     z-index: 1;
+    animation: rightM 1s ease 1s forwards; 
+}
+
+
+@keyframes rotateVerticalToHorizontal {
+    0% {
+        transform: rotate(90deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
 }
 
 .landL{
@@ -82,6 +114,7 @@ i{
     border: none;
     background-color: #fff;
     right: 90px;
+    animation: rotateVerticalToHorizontal 2s ease-in-out 1 alternate;
 }
 
 h2{
